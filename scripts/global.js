@@ -70,25 +70,11 @@ Gbl.baseTextures = [];
 Gbl.textures = [];
 
 window.addEventListener("keydown",function(event) {
-    Gbl.lastKeyCode = event.keyCode;
-    Gbl.keyCode = event.keyCode;
-    Gbl.keyPressed[event.keyCode] = true;
-    if(Gbl.keyEnterPrev[event.keyCode]==true) {
-        Gbl.keyEnter[event.keyCode]=false;
-    }
-    else {
-        Gbl.keyEnter[event.keyCode]=true;
-        Gbl.keyEnterPrev[event.keyCode]=true;
-    }
-    Gbl.keyExit[event.keyCode]=false;
+    Gbl.enterKey(event.keyCode);
 },false);
 
 window.addEventListener("keyup",function(event) {
-    Gbl.keyCode = null;
-    Gbl.keyPressed[event.keyCode] = false;
-    Gbl.keyEnter[event.keyCode]=false;
-    Gbl.keyExit[event.keyCode]=true;
-    Gbl.keyEnterPrev[event.keyCode]=false;
+    Gbl.exitKey(event.keyCode);
 },false);
 
 Gbl.frameCount = 0;
@@ -104,45 +90,39 @@ Gbl.getFPS = function() {
     return fps;
 }
 
-Gbl.up = function() { 
-    Gbl.keyPressed[38] = true; // up
-    Gbl.keyPressed[39] = false; // right
-    Gbl.keyPressed[40] = false; // down
-    Gbl.keyPressed[37] = false; // left
-    Gbl.keyPressed[32] = false; // space
+Gbl.enterKey = function(keyCode) {
+    Gbl.lastKeyCode = keyCode;
+    Gbl.keyCode = keyCode;
+    Gbl.keyPressed[keyCode] = true;
+    if(Gbl.keyEnterPrev[keyCode]==true) {
+        Gbl.keyEnter[keyCode]=false;
+    }
+    else {
+        Gbl.keyEnter[keyCode]=true;
+        Gbl.keyEnterPrev[keyCode]=true;
+    }
+    Gbl.keyExit[keyCode]=false;
 }
 
-Gbl.down = function() { 
-    Gbl.keyPressed[38] = false; // up
-    Gbl.keyPressed[39] = false; // right
-    Gbl.keyPressed[40] = true; // down
-    Gbl.keyPressed[37] = false; // left
-    Gbl.keyPressed[32] = false; // space
+Gbl.exitKey = function(keyCode) {
+    if(Gbl.keyPressed[keyCode]==false) return;
+    Gbl.keyCode = null;
+    Gbl.keyPressed[keyCode]=false;
+    Gbl.keyEnter[keyCode]=false;
+    Gbl.keyExit[keyCode]=true;
+    Gbl.keyEnterPrev[keyCode]=false;
 }
 
-Gbl.left = function() { 
-    Gbl.keyPressed[38] = false; // up
-    Gbl.keyPressed[39] = false; // right
-    Gbl.keyPressed[40] = false; // down
-    Gbl.keyPressed[37] = true; // left
-    Gbl.keyPressed[32] = false; // space
-}
-
-Gbl.right = function() { 
-    Gbl.keyPressed[38] = false; // up
-    Gbl.keyPressed[39] = true; // right
-    Gbl.keyPressed[40] = false; // down
-    Gbl.keyPressed[37] = false; // left
-    Gbl.keyPressed[32] = false; // space
-}
-
-Gbl.space = function() {
-    Gbl.keyPressed[38] = false; // up
-    Gbl.keyPressed[39] = false; // right
-    Gbl.keyPressed[40] = false; // down
-    Gbl.keyPressed[37] = false; // left
-    Gbl.keyPressed[32] = true; // space
-}
+Gbl.enterUp = function() { Gbl.enterKey(38); }
+Gbl.exitUp = function() { Gbl.exitKey(38); }
+Gbl.enterLeft = function() { Gbl.enterKey(37); }
+Gbl.exitLeft = function() { Gbl.exitKey(37); }
+Gbl.enterRight = function() { Gbl.enterKey(39); }
+Gbl.exitRight = function() { Gbl.exitKey(39); }
+Gbl.enterDown = function() { Gbl.enterKey(40); }
+Gbl.exitDown = function() { Gbl.exitKey(40); }
+Gbl.enterSpace = function() { Gbl.enterKey(32); }
+Gbl.exitSpace = function() { Gbl.exitKey(32); }
 
 Gbl.verbs = {
     setVar          :   { fct : "_setVar"           , min : 2,  max : 2,   deprecated:false,    usage : "setVar($variable,col|row|x|y)" },
