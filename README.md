@@ -8,7 +8,7 @@ RetroJS est un moteur de jeu tournant sous navigateur.
 
 Il est piloté par un scénario contenant des scripts que le développeur écrira dans un pseudoCode spécifique.
 
-Ce pseudoCode est proche d'un langage pour le pilotage d'automate à états.
+Ce pseudoCode est proche d'un langage pour le pilotage d'automates.
 
 ## Avant de commencer
 
