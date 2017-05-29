@@ -16,7 +16,7 @@ Ce pseudoCode est proche d'un langage pour le pilotage d'automate à états.
   RetroJS utilise les frameworks
   - [PixiJS v4](https://github.com/pixijs/pixi.js)
   - [pixi-display v1.1.1](https://github.com/pixijs/pixi-display)
-  - [Smooth.js v0.1.5](https://github.com/osuushi/Smooth.js)
+  - [Smooth.js v0.1.5](https://github.com/osuushi/Smooth.js)  
   Il faut se procurer ses éléments en les téléchargeant sur leur site respectif afin de les intégrer dans votre projet RetroJS.
 
 ### Fonctionnement en mode serveur
