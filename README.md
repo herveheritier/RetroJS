@@ -55,6 +55,6 @@ Ce pseudoCode est proche d'un langage pour le pilotage d'automate à états.
 
 ### Page html embarquant le moteur RetroJS et un scénario minimal
    
- Vous pouvez créer votre projet en partant de sa version minimale présente dans le répertoire [samples/minimal](https://github.com/herveheritier/RetroJS/tree/master/samples).
+ Vous pouvez créer votre projet en partant de sa version minimale présente dans le répertoire [samples/minimal](https://github.com/herveheritier/RetroJS/tree/master/samples/minimal).
  
  Vous pouvez aussi voir le résultat sur le site de l'auteur : [RetroJS Minimal Scenario](http://heritier.herve.free.fr/RetroJS/samples/minimal/)
