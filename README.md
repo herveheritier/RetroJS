@@ -53,6 +53,8 @@ Ce pseudoCode est proche d'un langage pour le pilotage d'automate à états.
            |
            +--- base.css              la feuille de style de base de la page html
 
-### Page html embarquant le moteur RetroJS et votre scénario
+### Page html embarquant le moteur RetroJS et un scénario minimal
    
- Une page de base se trouve dans le répertoire samples/minimal du projet GitHub
+ Vous pouvez créer votre projet en partant de sa version minimale présente dans le répertoire samples/minimal.
+ 
+ Vous pouvez aussi voir le résultat sur le site de l'auteur : [RetroJS Minimal Scenario](http://heritier.herve.free.fr/RetroJS/samples/minimal/)
