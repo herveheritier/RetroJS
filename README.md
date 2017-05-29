@@ -24,30 +24,30 @@ Ce pseudoCode est proche d'un langage pour le pilotage d'automate à états.
 
 ### Structure minimale d'un projet.
 
-   .                               racine d'un sous-répertoire de votre site web local
-   |
-   +--- index.html                 la page html embarquant le moteur RetroJS et votre scénario
-   |
-   +--- scripts                    <répertoire>
-   |    |
-   |    +--- easy.js               scripts du moteur RetroJS
-   |    +--- global.js             ...
-   |    +--- imageCounter.js       ...
-   |    +--- loadScenario.js       ...
-   |    +--- main.js               ...
-   |    +--- sprite.js             ...
-   |    +--- pixi.min.js           framework PixiJS
-   |    +--- pixi.display.js       complément au framework PixiJS
-   |
-   +--- resources                  <répertoire>
-   |    |
-   |    +--- scenario.txt          votre scénario RetroJS à développer en pseudoCode
-   |    +--- *.png                 les ressources images
-   |    +--- *.mp4                 les ressources sonores
-   |
-   +--- styles                     <répertoire>
-        |
-        +--- base.css              la feuille de style de base de la page html
+      .                               racine d'un sous-répertoire de votre site web local
+      |
+      +--- index.html                 la page html embarquant le moteur RetroJS et votre scénario
+      |
+      +--- scripts                    <répertoire>
+      |    |
+      |    +--- easy.js               scripts du moteur RetroJS
+      |    +--- global.js             ...
+      |    +--- imageCounter.js       ...
+      |    +--- loadScenario.js       ...
+      |    +--- main.js               ...
+      |    +--- sprite.js             ...
+      |    +--- pixi.min.js           framework PixiJS
+      |    +--- pixi.display.js       complément au framework PixiJS
+      |
+      +--- resources                  <répertoire>
+      |    |
+      |    +--- scenario.txt          votre scénario RetroJS à développer en pseudoCode
+      |    +--- *.png                 les ressources images
+      |    +--- *.mp4                 les ressources sonores
+      |
+      +--- styles                     <répertoire>
+           |
+           +--- base.css              la feuille de style de base de la page html
 
 ### Page html embarquant le moteur RetroJS et votre scénario
    
