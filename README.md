@@ -21,7 +21,7 @@ Ce pseudoCode est proche d'un langage pour le pilotage d'automate à états.
   Il faut se procurer ses éléments en les téléchargeant sur leur site respectif afin de les intégrer dans votre projet RetroJS.
 
 ### Fonctionnement en mode serveur
-  Pour fonctionner le moteur RetroJS doit être appelé en mode serveur. Si vous ne possédez pas de serveur local, vous devez d'abord en installer un. Ensuite créez votre projet RetroJS dans un sous-répertoire de votre site web local.
+  Pour fonctionner le moteur RetroJS doit être appelé en mode serveur. Si vous ne possédez pas de serveur local, vous devez d'abord en installer un (comme par exemple [Caddy](https://github.com/mholt/caddy)). Ensuite créez votre projet RetroJS dans un sous-répertoire de votre site web local.
   
 ## Construire son projet RetroJS
 
