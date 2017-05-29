@@ -4,9 +4,9 @@ _____________
 
 Pour une documentation détaillée, consulter le [wiki RetroJS](https://github.com/herveheritier/RetroJS/wiki)
 
-RetroJS est un moteur de jeu tournant sous navigateur.
+RetroJS est un moteur de jeu tournant dans une page web sous navigateur.
 
-Il est piloté par un scénario contenant des scripts que le développeur écrira dans un pseudoCode spécifique.
+Il est piloté par un scénario contenant des scripts que le développeur écrira dans un pseudoCode spécifique. Chaque script sera utilisé pour piloter un ou plusieurs sprites et chaque sprite sera piloté par un seul script.
 
 Ce pseudoCode est proche d'un langage pour le pilotage d'automates.
 
