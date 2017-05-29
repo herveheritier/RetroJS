@@ -2,7 +2,7 @@ _____________
 # RetroJS
 _____________
 
-Pour une documentation détaillée, consulter le [wiki RetroJS](https://github.com/herveheritier/RetroJS.wiki.git)
+Pour une documentation détaillée, consulter le [wiki RetroJS](https://github.com/herveheritier/RetroJS/wiki)
 
 RetroJS est un moteur de jeu tournant sous navigateur.
 
