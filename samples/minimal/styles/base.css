@@ -1,0 +1,73 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+canvasContainer {
+    width: 100%;
+}
+canvas {
+    border: 1px solid white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#info {
+    display: block;
+    color: #FFFFFF;
+    width: 100px;
+    height: 30px;
+}
+#console {
+    display: block;
+    color: white;
+    width: 480px;
+    height: 370px;
+    overflow-y: scroll;
+    font-family: Courier New, Courier, monospace;
+    font-size: small;
+}
+#buttonContainer {
+    width: 100%;
+}
+.controleButton {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: block;
+    background:url(../resources/buttonUp.png) no-repeat;
+    background-size: 100%;
+    border: 0px;
+}
+#buttonContainer td {
+    width: 60px;
+    height: 60px;
+}
+#buttonContainer table {
+    margin-left: auto;
+    margin-right: auto;
+}
+#up {
+    background-color: crimson;
+}
+#down {
+    background-color: green;
+}
+#left {
+    background-color: blue;
+}
+#right {
+    background-color: maroon;
+}
+#space {
+    background-color: gray;
+}
+
+/* 
+masque l'encadré de focus ajouté 
+par certain navigateurs après un clic
+sur une zone 
+*/
+
+*:focus {
+    outline: none;
+}

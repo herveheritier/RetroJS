@@ -2,7 +2,7 @@ _____________
 # RetroJS
 _____________
 
-Pour une documentation détaillée, consulter le [wiki RetroJS](#https://github.com/herveheritier/RetroJS.wiki.git)
+Pour une documentation détaillée, consulter le [wiki RetroJS](https://github.com/herveheritier/RetroJS.wiki.git)
 
 RetroJS est un moteur de jeu tournant sous navigateur.
 
@@ -13,8 +13,10 @@ Ce pseudoCode est proche d'un langage pour le pilotage d'automate à états.
 ## Avant de commencer
 
 ### Framework tiers
-  RetroJS utilise le framework [PixiJS v4](http://www.pixijs.com/)
-  et le complément [pixi-display v1.1.1](https://www.npmjs.com/package/pixi-display)
+  RetroJS utilise les frameworks
+  - [PixiJS v4](https://github.com/pixijs/pixi.js)
+  - [pixi-display v1.1.1](https://github.com/pixijs/pixi-display)
+  - [Smooth.js v0.1.5](https://github.com/osuushi/Smooth.js)
   Il faut se procurer ses éléments en les téléchargeant sur leur site respectif afin de les intégrer dans votre projet RetroJS.
 
 ### Fonctionnement en mode serveur
@@ -24,7 +26,7 @@ Ce pseudoCode est proche d'un langage pour le pilotage d'automate à états.
 
 ### Structure minimale d'un projet.
 
-      .                               racine d'un sous-répertoire de votre site web local
+      .                               racine du sous-répertoire de votre projet RetroJS dans votre site web local
       |
       +--- index.html                 la page html embarquant le moteur RetroJS et votre scénario
       |
@@ -38,6 +40,7 @@ Ce pseudoCode est proche d'un langage pour le pilotage d'automate à états.
       |    +--- sprite.js             ...
       |    +--- pixi.min.js           framework PixiJS
       |    +--- pixi.display.js       complément au framework PixiJS
+      |    +--- smooth.js             framework Smooth.js 
       |
       +--- resources                  <répertoire>
       |    |

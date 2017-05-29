@@ -1,0 +1,32 @@
+*** RetroJS Minimal scenario ***
+
+#scenario
+
+    name(minimal)
+    spriteSize(16)
+    showFps
+
+#resources
+
+    img(alphabet,resources/alphabet.png)
+
+#script(mini)
+        material
+        map(#alphabet,10,4,27)
+        col(7) row(7)
+        show
+    :droite
+        goRight
+        nop
+    :gauche
+        goLeft
+        nop
+        goto(droite)
+
+#element(monPremierSprite)
+    script(mini)
+
+#generateElement(monPremierSprite,1)
+
+
+    
