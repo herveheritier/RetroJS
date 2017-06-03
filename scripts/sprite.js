@@ -15,6 +15,8 @@ Sprite = function() {
     this.log=false;
     this.lastMessage="";
     this.collisionRules=[];
+    this.clickRule=null;
+    this.clickable=false;
     this.script=[];
     this.etiqs=[];
     this.outLeft=null;
@@ -342,6 +344,17 @@ Sprite.prototype.draw = function() {
     if(this.displayMode=="animation") this.animate();
 }
 
+Sprite.prototype.clickDetection = function() {
+    this.pixiSprite.on('pointertap',(
+        function(that){
+            return function(){
+                Gbl.lastClicked = that.uid;
+            };
+        })(this)
+    );
+}
+
+
 Sprite.prototype.setPath = function(path) {
     this.path = path;
     this.posOnPath = 0;
@@ -606,7 +619,7 @@ Sprite.prototype._dmapOut = function() {
 }
 
 Sprite.prototype._seeUp = function() {
-    for(var rr=this.row;rr>0;rr--) {
+    for(var rr=this.row-1;rr>=0;rr--) {
         var d = rr*Gbl.mapWidth+this.col;
         if(dmap[d]) {
             if(dmap[d]==this.getParam(0)) {
@@ -620,7 +633,7 @@ Sprite.prototype._seeUp = function() {
 }
 
 Sprite.prototype._seeDown = function() {
-    for(var rr=this.row;rr<Gbl.mapHeight;rr++) {
+    for(var rr=this.row+1;rr<Gbl.mapHeight;rr++) {
         var d = rr*Gbl.mapWidth+this.col;
         if(dmap[d]) {
             if(dmap[d]==this.getParam(0)) {
@@ -634,7 +647,7 @@ Sprite.prototype._seeDown = function() {
 }
 
 Sprite.prototype._seeLeft = function() {
-    for(var cc=this.col;cc>0;cc--) {
+    for(var cc=this.col-1;cc>=0;cc--) {
         var d = this.row*Gbl.mapWidth+cc;
         if(dmap[d]) {
             if(dmap[d]==this.getParam(0)) {
@@ -648,7 +661,7 @@ Sprite.prototype._seeLeft = function() {
 }
 
 Sprite.prototype._seeRight = function() {
-    for(var cc=this.col;cc<Gbl.mapWidth;cc++) {
+    for(var cc=this.col+1;cc<Gbl.mapWidth;cc++) {
         var d = this.row*Gbl.mapWidth+cc;
         if(dmap[d]) {
             if(dmap[d]==this.getParam(0)) {
@@ -1642,6 +1655,32 @@ Sprite.prototype._isRowInvalid = function() {
     return true;
 }
 
+Sprite.prototype._clickable = function() {
+    if(this.pixiSprite) {
+        this.pixiSprite.interactive = true;
+        this.clickable = true;
+        this.clickDetection();
+    }
+    return true;
+}
+
+Sprite.prototype._unclickable = function() {
+    if(this.pixiSprite) {
+        this.pixiSprite.interactive = false;
+        this.clickable = false;
+    }
+    return true;
+}
+
+Sprite.prototype._onClick = function() {
+    if(this.pixiSprite) {
+        if(this.pixiSprite.interactive==true) {
+            this.clickRule = {action:"goto",params:this.params};
+        }
+    }
+    return true;
+}
+
 Sprite.prototype.setScript = function(script) {
     this.etiqs = script.etiqs;
     this.script = script.instructions;
@@ -1724,6 +1763,14 @@ Sprite.prototype.playScript = function(command) {
                     break;
                 }
             }
+        }
+
+        // traitement du click
+
+        if(!this.gotoOnScript && this.clickable && Gbl.lastClicked==this.uid && this.clickRule!=null) {
+            this.label = this.clickRule.params[Math.floor(Math.random()*(this.clickRule.params.length-1))];
+            this.gotoOnScript=true;
+            Gbl.lastClicked=-1;
         }
 
         // si on est à la recherche d'une étiquette

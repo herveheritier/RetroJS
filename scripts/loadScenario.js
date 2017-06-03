@@ -45,7 +45,7 @@ Scenario.verbs = {
     screenHeight: { fct : "_screenHeight", min : 1, max : 1, deprecated:false, usage : "screenHeight(number)" },
     mapWidth: { fct : "_mapWidth", min : 1, max : 1, deprecated:false, usage : "mapWidth(number)" },
     mapHeight: { fct : "_mapHeight", min : 1, max : 1, deprecated:false, usage : "mapHeight(number)" },
-    mapOrigin: { fct : "_mapOrigin", min : 2, max : 2, deprecated:false, usage : "mapOrigin" },
+    mapOrigin: { fct : "_mapOrigin", min : 2, max : 2, deprecated:false, usage : "mapOrigin(col,row)" },
     spriteSize: { fct : "_spriteSize", min : 1, max : 1, deprecated:false, usage : "spriteSize(number)" },
     thick: { fct : "_thick", min : 1, max : 1, deprecated:false, usage : "thick(number)" },
     unit: { fct : "_unit", min : 1, max : 1, deprecated:false, usage : "unit(number)" },

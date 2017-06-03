@@ -29,6 +29,7 @@ Gbl.logLines        = 0;
 Gbl.uid             = 0;
 Gbl.pathes          = [];
 Gbl.uidList         = [];
+Gbl.lastClicked     = -1;
 
 Gbl.canvasWidth = Gbl.mapWidth*Gbl.spriteSize;
 Gbl.canvasHeight = Gbl.mapHeight*Gbl.spriteSize;
@@ -249,6 +250,9 @@ Gbl.verbs = {
     dequeue         :   { fct : "_dequeue"          , min : 1,  max : 0,   deprecated:false,    usage : "dequeue(message[,$variable[,$variable]])"},
     followPath      :   { fct : "_followPath"       , min : 3,  max : 3,   deprecated:false,    usage : "followPath(pathName,position,vitesse)"},
     isColInvalid    :   { fct : "_isColInvalid"     , min : 2,  max : 2,   deprecated:false,    usage : "isColInvalid(colonne,etiquette)"},
-    isRowInvalid    :   { fct : "_isRowInvalid"     , min : 2,  max : 2,   deprecated:false,    usage : "isRowInvalid(ligne,etiquette)"}
+    isRowInvalid    :   { fct : "_isRowInvalid"     , min : 2,  max : 2,   deprecated:false,    usage : "isRowInvalid(ligne,etiquette)"},
+    clickable       :   { fct : "_clickable"        , min : 0,  max : 0,   deprecated:false,    usage : "clickable"},
+    unclickable     :   { fct : "_unclickable"      , min : 0,  max : 0,   deprecated:false,    usage : "unclickable"},
+    onClick         :   { fct : "_onClick"          , min : 1,  max : 0,   deprecated:false,    usage : "onClick(etiquette[,etiquette])"}
 }
 
