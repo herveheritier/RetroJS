@@ -224,7 +224,7 @@ Gbl.verbs = {
     attachable      :   { fct : "_attachable"       , min : 0,  max : 0,   deprecated:false,    usage : "attachable"},
     unattachable    :   { fct : "_unattachable"     , min : 0,  max : 0,   deprecated:false,    usage : "unattachable"},
     postRegister    :   { fct : "_postRegister"     , min : 2,  max : 0,   deprecated:false,    usage : "postRegister(nomSprite,message) | postRegister(nomSprite,message,data[,data])"},
-    compute         :   { fct : "_compute"          , min : 2,  max : 2,   deprecated:false,    usage : "compute(var,formula)"},
+    compute         :   { fct : "_compute"          , min : 2,  max : 0,   deprecated:false,    usage : "compute(var,formula)"},
     getRegisterVar  :   { fct : "_getRegisterVar"   , min : 1,  max : 1,   deprecated:false,    usage : "getRegisterVar(var)"},
     ifEqualGoto     :   { fct : "_ifEqualGoto"      , min : 3,  max : 3,   deprecated:false,    usage : "ifEqualGoto(data,data,etiquette)"},
     ifInfGoto       :   { fct : "_ifInfGoto"        , min : 3,  max : 3,   deprecated:false,    usage : "ifInfGoto(data,data,etiquette)"},

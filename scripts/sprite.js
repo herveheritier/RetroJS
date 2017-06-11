@@ -1470,7 +1470,10 @@ Sprite.prototype._followAttached = function() {
 }
 
 Sprite.prototype._compute = function() {
+    // concaténation de tous les paramètres si plus d'un seul
+    // (cas de la présence de virgule qui est le séparateur d'instruction)
     var formula = this.params[1];
+    for(var i=2;i<this.params.length;i++) formula += "," + this.params[i];
     var formulaVars = formula.match(/(\$[A-Za-z0-9]*)/g);
     formula = formula.replace("@maxcol",Gbl.mapWitdh-1);
     formula = formula.replace("@maxrow",Gbl.mapHeight-1);
