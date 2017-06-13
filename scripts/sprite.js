@@ -1074,7 +1074,7 @@ Sprite.prototype._post = function() {
         }
     }
     for(var i in sprites) {
-        if(sprites[i].name==this.getParam(0)) sprites[i].mailbox[this.getParam(1)]=data;
+        if(sprites[i].name==this.getParam(0)) sprites[i].mailbox[this.getParam(1)]=data.slice();
     }
     return true;
 }
